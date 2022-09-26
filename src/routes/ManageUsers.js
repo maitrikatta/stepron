@@ -3,7 +3,6 @@ import style from '../style/manage-users.module.css';
 import moment from 'moment/moment';
 import { useGlobalContext } from '../context';
 import { useParams, useNavigate } from 'react-router-dom';
-import { wait } from '@testing-library/user-event/dist/utils';
 function ManageUsers() {
   const navigate = useNavigate();
   const { setUsers, users } = useGlobalContext();
