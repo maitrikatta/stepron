@@ -3,6 +3,7 @@ import style from '../style/manage-users.module.css';
 import moment from 'moment/moment';
 import { useGlobalContext } from '../context';
 import { useParams, useNavigate } from 'react-router-dom';
+import { wait } from '@testing-library/user-event/dist/utils';
 function ManageUsers() {
   const navigate = useNavigate();
   const { setUsers, users } = useGlobalContext();
@@ -55,7 +56,6 @@ function ManageUsers() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     if (fname.trim().length < 2) {
       alert('First name should be greater than 2');
       return;
@@ -86,7 +86,13 @@ function ManageUsers() {
       // push into local storage
       const local = JSON.parse(localStorage.getItem('userr'));
       console.log(local);
-      local.push({ fname, lname, dob, id: lastID + 2, marital: maritalStatus });
+      local.push({
+        fname,
+        lname,
+        dob,
+        id: lastID + 2,
+        marital: maritalStatus,
+      });
 
       //update state
       setUsers(local);
@@ -182,6 +188,10 @@ function ManageUsers() {
                 setDOB(moment(new Date(ev.target.value)).format('YYYY-MM-DD'))
               }
             />
+          </div>
+          <div>
+            <label htmlFor="profile">Profile</label>
+            <input id="profile" name="profile" type="file" accept="image/*" />
           </div>
           <div>
             <button type="submit" className={style.success}>

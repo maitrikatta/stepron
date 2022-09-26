@@ -7,6 +7,9 @@ function Main() {
   const { users } = useGlobalContext();
   return (
     <main className={main.container}>
+      <nav className={main.message}>
+        <p>*refresh or closing of browser will not loose data</p>
+      </nav>
       <nav>
         <Link to="manage-users/add">
           <button>Add User</button>

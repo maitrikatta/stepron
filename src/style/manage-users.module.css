@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+  font-family: tahoma;
+}
 .container {
-  height: 540px;
+  min-height: 600px;
+  padding: 20px;
   box-shadow: 0px 0px 3px silver;
   box-sizing: border-box;
   display: flex;
@@ -16,16 +21,29 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-width: 300px;
+  justify-content: space-evenly;
+  min-width: 350px;
   gap: 10px;
   box-shadow: 0px 0px 3px silver;
 }
 label {
   font-size: 16px;
-  font-family: sans-serif;
+}
+label:hover {
+  cursor: pointer;
 }
 input {
-  height: 25px;
+  height: 30px;
+  padding-left: 3%;
+  outline: none;
+  border-radius: 3px;
+}
+input:focus {
+  border: 2px solid rgb(10, 107, 217);
+}
+input::placeholder {
+  color: red;
+  padding-left: 3%;
 }
 button {
   padding: 5px;
@@ -35,7 +53,4 @@ button {
 }
 .warning:hover {
   background-color: rgba(232, 21, 21, 0.7);
-}
-input:placeholder {
-  padding-left: 10px;
 }
