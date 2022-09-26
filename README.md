@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Result are live
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+test the live result on [maitrikatta.com](https://maitrikatta.com).
 
 ## Available Scripts
 
