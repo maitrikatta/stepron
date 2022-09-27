@@ -61,7 +61,7 @@ function ManageUsers() {
     } else if (lname.trim().length < 2) {
       alert('Last name should be greater than 2');
       return;
-    } else if (dob === 'Invalid date' || dob === null) {
+    } else if (dob === 'Invalid date' || dob === null || dob === '') {
       alert('Please select date of birth');
     } else if (maritalStatus.trim() === '' || maritalStatus === null) {
       alert('Please select marital status');
