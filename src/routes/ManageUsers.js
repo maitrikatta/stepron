@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import style from '../style/manage-users.module.css';
 import moment from 'moment/moment';
 import { useGlobalContext } from '../context';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 function ManageUsers() {
-  const navigate = useNavigate();
   const { setUsers, users } = useGlobalContext();
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
@@ -19,7 +18,6 @@ function ManageUsers() {
     const foundUser = local.filter((user) => user.id === id);
     if (foundUser.length === 0) {
       alert(`No such user of id ${uid}`);
-      // navigate('/', { replace: true });
     } else {
       const { fname, lname, dob, marital } = foundUser[0];
       setFname(fname);
@@ -70,7 +68,7 @@ function ManageUsers() {
       if (id) {
         handleEdit();
         console.log(dob);
-        alert('Edieted successfully');
+        alert('yay! edited with ease.');
         clearData();
         return;
       }
@@ -97,7 +95,7 @@ function ManageUsers() {
       setUsers(local);
       localStorage.setItem('userr', JSON.stringify(local));
 
-      alert('User added sucessfully');
+      alert('User added sucessfully.');
 
       // clear user details
       clearData();
@@ -203,6 +201,9 @@ function ManageUsers() {
             ) : (
               ''
             )}
+            <Link to="/">
+              <button>Home</button>
+            </Link>
           </div>
         </form>
       </article>
